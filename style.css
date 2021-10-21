@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(image/galerie_2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.background_opacity {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background-color: rgb(21, 21, 21);
+    padding: 6px 14px;
+    transition: all 0.5 ease;
+}
+.sidebar.active {
+    width: 240px;
+}
+.logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5 ease;
+}
+.sidebar.active .logo {
+    opacity: 1;
+}
+.logo i {
+  margin-left: 15px;
+}
+.logo-content .log  i {
+    font-size: 28px;
+    margin-right: 5px;
+}
+.logo-content .log .logo_name {
+    font-size: 20px;
+    font-weight: 400;
+}
+.sidebar #btn {
+    position:absolute;
+    left: 50%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    color:#fff;
+    line-height: 50px;
+    transform: translateX(-50%);
+}
+.sidebar.active #btn {
+    left: 90%;
+}
+.sidebar ul {
+    margin-top: 20px;
+}
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin:  30px 0 5px;
+    line-height: 50px;
+    list-style: none;
+}
+.sidebar ul li .tooltip {
+    position: absolute;
+    top: 0;
+    left: 122px;
+    transform: translate(-50% , 50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+    z-index: 1000;
+}
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+.sidebar ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    top: 50%;
+    opacity: 1;  
+}
+.sidebar ul li input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background:#424242;
+    padding-left: 50px;
+    font-size: 18px;
+    color: #fff;
+}
+.sidebar ul li .bx-search{
+    position: absolute;
+    z-index: 99;
+    color: #fff;
+    font-size: 22px;
+    transition: all 0.5 ease;
+}
+.sidebar ul li .bx-search:hover{
+    background: #fff;
+    color: #616161;
+}
+.sidebar ul li a{
+    margin-top: 45px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+.sidebar ul li a:hover{
+   color: #11101d;
+   background-color: #fff;
+}
+.sidebar ul li i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+.sidebar .links_name{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5 ease;
+}
+.sidebar.active .links_name{
+    opacity: 1;
+    pointer-events: auto;
+}
+.log_out {
+    position: absolute;
+    left: 65%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    color: #fff;
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+}
+.sidebar.active .log_out{
+    position: absolute;
+    left: 50%;
+}
+.button_list {
+    background-color: rgba(0, 0, 0, 0.0);
+    position: fixed;
+    top: 35vh;
+    margin-left: 100px;
+    height: 60px;
+    width: 100%;
+}
+.button_list li {
+    width: 60px;
+    list-style: none;
+}
+.nav_button {
+    margin-top: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: #fff 2px solid;
+    height: 25px;
+    width: 25px;
+    cursor: auto;
+}
+.nav_button:hover{
+    cursor: auto;
+    border: rgb(21, 21, 21) 2px solid;
+    background-color: rgb(21, 21, 21);
+}
+.sidebar.active ~ .button_list  {
+    margin-left: 260px;
+}
+.contenu {
+    display: flex;
+    flex-direction: column;
+}
+.center_title {
+    position: relative;
+    top: 17vh;
+    left: 2%;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+.center_title h1{
+    font-size: 75px;
+}
+.button_center {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    position: relative;
+    left: 40%;
+    top: 32vh;
+    color: #fff;
+}
+.button_center_item {
+    margin-right: 5%;
+}
+.button_register ,.button_connect{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    border: #212121 2px solid;
+    border-radius: 12px;
+    background-color: rgb(21, 21, 21);
+}
+.button_center_item a i {
+    font-size: 25px;
+    margin-right: 5px;
+}
+.button_register:hover ,.button_connect:hover {
+    transition: all 0.4s ease;
+    border: #fff 2px solid;
+    background: #fff;
+    color: #616161;
+}
